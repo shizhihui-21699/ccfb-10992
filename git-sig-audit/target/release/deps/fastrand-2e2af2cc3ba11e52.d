@@ -1,0 +1,8 @@
+/Users/shizhihui/ccfb/runs/10992/workspace/git-sig-audit/target/release/deps/fastrand-2e2af2cc3ba11e52.d: /Users/shizhihui/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fastrand-2.5.0/src/lib.rs /Users/shizhihui/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fastrand-2.5.0/src/global_rng.rs
+
+/Users/shizhihui/ccfb/runs/10992/workspace/git-sig-audit/target/release/deps/libfastrand-2e2af2cc3ba11e52.rlib: /Users/shizhihui/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fastrand-2.5.0/src/lib.rs /Users/shizhihui/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fastrand-2.5.0/src/global_rng.rs
+
+/Users/shizhihui/ccfb/runs/10992/workspace/git-sig-audit/target/release/deps/libfastrand-2e2af2cc3ba11e52.rmeta: /Users/shizhihui/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fastrand-2.5.0/src/lib.rs /Users/shizhihui/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fastrand-2.5.0/src/global_rng.rs
+
+/Users/shizhihui/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fastrand-2.5.0/src/lib.rs:
+/Users/shizhihui/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fastrand-2.5.0/src/global_rng.rs:

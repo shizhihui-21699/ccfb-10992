@@ -1,0 +1,1 @@
+/Users/shizhihui/ccfb/runs/10992/workspace/git-sig-audit/target/debug/git-sig-audit: /Users/shizhihui/ccfb/runs/10992/workspace/git-sig-audit/src/commit.rs /Users/shizhihui/ccfb/runs/10992/workspace/git-sig-audit/src/main.rs /Users/shizhihui/ccfb/runs/10992/workspace/git-sig-audit/src/report.rs /Users/shizhihui/ccfb/runs/10992/workspace/git-sig-audit/src/verify.rs
