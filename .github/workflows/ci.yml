@@ -1,0 +1,57 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tooling
+        run: |
+          sudo apt-get update
+          # gpg and OpenSSH >= 8.2 are needed for the integration tests, which
+          # build real signed commits and cross-check verdicts against git.
+          sudo apt-get install -y gnupg openssh-client git
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Format
+        run: cargo fmt --check
+
+      - name: Clippy
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: Test
+        run: cargo test --all-targets
+
+  # Example of the tool being used as a commit-signature gate. It is commented
+  # out because a fresh checkout has no keyring or allowed_signers file; wire
+  # these up from your own secrets before enabling.
+  #
+  # sigaudit-gate:
+  #   runs-on: ubuntu-latest
+  #   needs: test
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0        # the audit needs full history
+  #     - name: Audit commit signatures
+  #       run: |
+  #         cargo build --release
+  #         ./target/release/sigaudit \
+  #           --allowed-signers .github/allowed_signers \
+  #           --format junit --output sigaudit.xml
+  #     - uses: actions/upload-artifact@v4
+  #       if: always()
+  #       with:
+  #         name: sigaudit-report
+  #         path: sigaudit.xml
