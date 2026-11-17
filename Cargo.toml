@@ -1,0 +1,31 @@
+[package]
+name = "commit-signature-audit"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+description = "Audit commit signatures (OpenPGP and SSH) directly from git objects, per branch, at commit time"
+license = "MIT OR Apache-2.0"
+
+[[bin]]
+name = "commit-signature-audit"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+base64 = "0.22"
+chrono = "0.4"
+clap = { version = "4", features = ["derive"] }
+git2 = { version = "0.20", default-features = false }
+hex = "0.4"
+rayon = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+tempfile = "3"
+
+[dev-dependencies]
+serde_json = "1"
+sha2 = "0.10"
+
+[profile.release]
+lto = "thin"
