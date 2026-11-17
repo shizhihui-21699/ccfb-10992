@@ -1,0 +1,15 @@
+[package]
+name = "hotpatch"
+version = "0.1.0"
+edition = "2021"
+description = "无源码二进制热补丁工具：定位 recvfrom 长度缺陷并注入 arm64 code cave 补丁"
+
+[dependencies]
+object = { version = "0.40.0", default-features = false, features = ["read", "macho"] }
+
+[[bin]]
+name = "hotpatch"
+path = "src/main.rs"
+
+[profile.release]
+panic = "abort"
